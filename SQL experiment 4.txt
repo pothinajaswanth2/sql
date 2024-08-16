@@ -1,0 +1,151 @@
+/*create table empl
+(
+emp_id int,
+empname varchar(255),
+salary int,
+Gender varchar(20),
+Department varchar(20),
+DOJ date
+);
+insert into empl values(100,"Jaswanth",56325,"Male","IT","2022-01-15");
+SELECT * from empl;
+insert into empl values(101,"karthekey",59500,"Male","CSE","2022-01-25");
+SELECT * from empl;
+insert into empl values(102,"AKshey",56425,"Male","IT","2022-03-20");
+SELECT * from empl;
+insert into empl values(103,"edres",56355,"Male","EE","2022-03-20");
+SELECT * from empl;
+insert into empl values(104,"rohan",56335,"Male","CSE","2023-04-25");
+SELECT * from empl;
+insert into empl values(105,"ashi",67895,"Female","CSE","2024-01-15");
+SELECT * from empl;
+ select min(salary) from empl;
+ select * from empl
+ WHERE salary= (select min(salary) from empl);
+ select max(salary) from empl;
+ 
+ select sum(salary) from empl;
+ 
+ select sum(gender) from empl;
+ 
+ select avg(salary) from empl;
+ 
+ select count(*) from empl;
+ 
+ 
+ select(sum(salary))/count(*) as Average from empl;
+
+
+select count(DOJ) from empl;
+
+select * from empl
+Order by emp_id desc;
+
+select * from empl
+Order by empname; 
+
+select * from empl
+WHERE emp_id between 100 and 104 
+
+select emp_id as Employee_id
+from empl;
+
+select max(salary) as Maximum_salary
+from empl; */
+
+select * from empl
+Where empname like "% i";
+
+select gender, count(*) as number
+from empl
+group by gender;
+
+select Department, count(*) as Number
+from empl
+group by Department;
+
+select gender, sum(salary)
+from empl
+group by gender;
+
+select Department, sum(salary)
+from empl
+group by Department
+having sum(salary)>50000;
+
+select Department, sum(salary)
+from empl
+group by Department
+having sum(salary)>51200;*/
+
+select Department, count(*)
+from empl
+group by Department
+having count(Department)>1;
+---------------------------------------------------------------------------------------
+
+/*create table customers1
+(
+  cust_id int,
+  cust_name varchar(255),
+  contact_name varchar(255),
+  Address varchar(255),
+  city varchar(30),
+  country varchar(25)
+  );*/
+  /*create table Orders1
+  (
+    order_id int,
+    cust_id int,
+    emp_id int,
+    order_date date,
+    shipper_id int
+    );*/
+    
+   /* insert into customers1 values(1,"alfreds futter","Maria anders","obere Str.57","berlin","germany");
+    select * from customers1;
+    insert into customers1 values(2,"ana trujilo","ana trujilo","Avda.de la","mexico","mexico");
+    select * from customers1;
+     insert into customers1 values(3,"antonio","antonio moreno","metadors","mexico","mexico");
+    select * from customers1;
+    
+    insert into Orders1 values(10308,2,7,"1996-09-18",3);
+    select * from Orders1;
+     insert into Orders1 values(10309,37,3,"1996-09-19",1);
+    select * from Orders1;
+     insert into Orders1 values(10310,77,8,"1996-09-20",2);
+    select * from Orders1;
+    
+    select Orders1.order_id,
+    customers1.cust_name
+    From Orders1
+    INNER JOIN customers1 ON
+    Orders1.cust_id = customers1.cust_id;
+    
+    select customers1.cust_name, Orders1.order_id
+    From customers1
+    LEFT JOIN orders1 ON
+    customers1.cust_id = Orders1.cust_id
+    ORDER BY customers1.cust_name;
+    
+create table employees1
+(
+  emp_id int,
+  last_name varchar(255),
+  first_name varchar(255),
+  DOB date
+  );
+  insert into employees1 values(1,"Davolio","Nancy","12/8/1968");
+  select * from employees1;
+    insert into employees1 values(2,"fuller","Andrew","2/19/1952");
+  select * from employees1;
+    insert into employees1 values(3,"Leverling","janet","8/30/1968");
+  select * from employees1;*/
+  
+  select Orders1.order_id,
+  employees1.last_name,
+  employees1.first_name
+  From Orders1
+  RIGHT JOIN employees1 ON
+  Orders1.emp_id = employees1.emp_id
+  ORDER BY Orders1.order_id
