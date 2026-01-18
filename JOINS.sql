@@ -1,7 +1,7 @@
 -- CREATE DATABASE Place;
 
 -- USE place;
-
+jhgvdu
 CREATE TABLE Project
 (
 ID int,
